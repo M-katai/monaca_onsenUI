@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        ons.bootstrap()
+        
+        .controller('NotificationController', function($scope) {
+            $scope.alert = function() {
+                ons.notification.alert({
+                    title: 'ダイアログのタイトル',
+                    messageHTML: 'メッセージは<strong style="color:red">HTML形式</strong>で記述する事もできます',
+                    buttonLabel: 'OK',
+                    callback: function() {
+                    // ボタンがタップされた
+                    }
+                });
+            }
+          
+            $scope.confirm = function() {
+                ons.notification.confirm({
+                    message: 'この書籍は参考になりますか？',
+                    title: 'ダイアログのタイトル',
+                    buttonLabels: ['はい', 'いいえ'],
+                    primaryButtonIndex: 1,
+                    cancelable: true,
+                    callback: function(index) {
+                    // index: -1 = キャンセルされた
+                    // 0～ タップされたボタンのインデックス(一番左が0)
+                    }
+                });
+            }
+        
+            $scope.prompt = function() {
+                ons.notification.prompt({
+                    title: "年齢の入力",
+                    message: "年齢を入力してください",
+                    callback: function(age) {
+                        ons.notification.alert({
+                            title: "入力結果",
+                            message: 'あなたは' + parseInt(age || 0) + '才ですね。'
+                        });
+                    }
+                });
+            }
+        })
+        
+        .controller("ButtonsController", function($scope) {
+            $scope.spin1 = false;
+            $scope.spin2 = false;
+            $scope.spin3 = false;
+            $scope.switchSpin1 = function() {
+                $scope.spin1 = ( $scope.spin1 == false );
+            }
+            $scope.switchSpin2 = function() {
+                $scope.spin2 = ( $scope.spin2 == false );
+            }
+            $scope.switchSpin3 = function() {
+                $scope.spin3 = ( $scope.spin3 == false );
+            }
+        });
+        
+        ons.disableAutoStatusBarFill();
+        
+        ons.ready(function() {
+            ons.createDialog('5_7_12_dialog.html');
+            ons.createPopover('5_7_13_popover.html');
+        });
+        
+        function switchClicked() {
+            $('#info').text (
+                mySwitch.isChecked()
+                );
+        };
+
+        document.addEventListener("pageinit", function(e) {
+            var volumeValue = 50;
+            
+            //ラジオボタンの選択が変化したら呼び出される
+            $('input[name="a"]:radio').on('change',function() {
+                //変数bgColorに背景色(red,green,bllue)を代入
+                var bgColor = $(this).val();
+                $('#radio-info').text(bgColor);
+            });
+            //レンジの値が確定したら呼び出し
+            $('input[type=range]').on('change',function() {
+                //変数volumeValueにレンジの値を代入
+                volumeValue = $(this).val();
+                $('#range-info').text(volumeValue);
+            });
+            //レンジのつまみのドラッグ中に呼び出される
+            $('input[type=range]').on('input',function() {
+                volumeValue = $(this).val();
+                $('#range-info').text(volumeValue + "(移動中)");
+            });
+        });
+        
+
+    </script>
+</head>
+<body>
+    <ons-navigator title="Navigator" var="myNavigator">
+        <ons-page>
+            <ons-toolbar>
+                <div class="center"> Onsen UI コンポーネント</div>
+            </ons-toolbar>
+            <ons-list>
+                <ons-list-header>リスト</ons-list-header>
+                <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('5_7_4.html', { animation : 'slide' } )" >
+                    【5_7_4】
+                </ons-list-item>
+                <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('5_7_5.html', { animation : 'slide' } )" >
+                    【5_7_5】
+                </ons-list-item>
+                <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('5_7_7.html', { animation : 'slide' } )" >
+                    【5_7_7】
+                </ons-list-item>
+                <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('5_7_8.html', { animation : 'slide' } )" >
+                    【5_7_8】
+                </ons-list-item>
+                <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('5_7_10.html', { animation : 'slide' } )" >
+                    【5_7_10】
+                </ons-list-item>
+                <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('5_7_11.html', { animation : 'slide' } )" >
+                    【5_7_11】
+                </ons-list-item>
+                <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('5_7_12.html', { animation : 'slide' } )" >
+                    【5_7_12】
+                </ons-list-item>
+                <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('5_7_13.html', { animation : 'slide' } )" >
+                    【5_7_13】
+                </ons-list-item>
+                <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('5_7_14.html', { animation : 'slide' } )" >
+                    【5_7_14】
+                </ons-list-item>
+                <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('5_7_15.html', { animation : 'slide' } )" >
+                    【5_7_15】
+                </ons-list-item>
+                <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('5_7_21.html', { animation : 'slide' } )" >
+                    【5_7_21】
+                </ons-list-item>
+                <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('5_8.html', { animation : 'slide' } )" >
+                    【5_8】
+                </ons-list-item>
+                <ons-list-item modifier="chevron" onclick="myNavigator.pushPage('5_9.html', { animation : 'slide' } )" >
+                    【5_9】
+                </ons-list-item>
+            </ons-list>
+        </ons-page>
+    </ons-navigator> 
+</body>
+</html>

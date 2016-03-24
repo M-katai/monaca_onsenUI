@@ -1,0 +1,53 @@
+<ons-page>
+    <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">設定</div>
+      </ons-toolbar>
+
+      <ons-list class="range-list">
+        <ons-list-header>音量</ons-list-header>
+        <ons-list-item>
+            <ons-row>
+                <ons-col width="40px">
+                    <ons-icon icon="fa-volume-down" class="lower"></ons-icon>
+                </ons-col>
+                <ons-col class="range-wrapper">
+                    <input type="range" value="50" class="range">
+                </ons-col>
+                <ons-col width="40px">
+                    <ons-icon icon="fa-volume-up"></ons-icon>
+                </ons-col>
+            </ons-row>
+        </ons-list-item>
+        <p id="range-info">50</p>
+    </ons-list>
+
+    
+    <ons-list>
+        <ons-list-header>背景色</ons-list-header>
+        <ons-list-item modifier="tappable">
+                <label class="radio-button radio-button--list-item" style="color:red">
+                <input type="radio" name="a" checked="checked" value="red"></input>
+                <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+                赤
+                </label>
+        </ons-list-item>
+
+        <ons-list-item modifier="tappable">
+                <label class="radio-button radio-button--list-item" style="color:green">
+                <input type="radio" name="a" value="green"></input>
+                <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+                緑
+                </label>
+        </ons-list-item>
+
+        <ons-list-item modifier="tappable">
+                <label class="radio-button radio-button--list-item" style="color:blue">
+                <input type="radio" name="a" value="blue"></input>
+                <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+                青
+                </label>
+        </ons-list-item>
+        <p id="radio-info" style="text-align:center">red</p>
+    </ons-list>
+</ons-page>

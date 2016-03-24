@@ -1,0 +1,19 @@
+<ons-page>
+    <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">
+            ons-modal
+        </div>
+        <div class="right"><ons-search-input></ons-search-input></div>
+    </ons-toolbar>
+    <br /><br /><br />
+    <div style="text-align: center">
+        <ons-button modifier="dark" onclick="myModal.show()">モーダルウィンドウを開く</ons-button>
+    </div>
+    <ons-modal var="myModal">
+        <ons-icon icon="ion-load-a" spin="true"></ons-icon>
+            <p>モーダルウィンドウ</p>
+        <ons-button modifier="dark" onclick="myModal.hide()">
+            モーダルウィンドウを閉じる</ons-button>
+    </ons-modal>
+</ons-page>

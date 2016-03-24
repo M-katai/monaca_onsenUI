@@ -1,0 +1,45 @@
+.page--blue__content {
+    background-color: blue;
+}
+
+.toolbar-button--quiet--red {
+    color: red;
+}
+
+.col {
+  border: 1px solid #ccc;
+  background: #fff;
+  overflow: hidden;
+  padding: 4px;
+  color: #999;
+}
+
+
+
+h3 {
+  color: #666;
+  font-size: 17px;
+}
+
+.button--red {
+    background-color: red;
+}
+
+/* 5_9 */
+
+.range-list {
+  text-align: center;
+}
+
+.range-wrapper .range {
+  margin-top: 7px;
+  width: 100%;
+}
+
+ons-icon {
+  opacity: 0.8;
+}
+
+.lower {
+  opacity: 0.2;
+}

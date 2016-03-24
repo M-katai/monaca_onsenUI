@@ -1,0 +1,21 @@
+<ons-page>
+    <ons-toolbar>
+        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="center">
+            ons-alert-dialog
+        </div>
+        <div class="right"><ons-search-input></ons-search-input></div>
+    </ons-toolbar>
+    
+    <ons-list ng-controller="NotificationController">
+        <ons-list-item ng-click="alert()" modifier="tappable">
+            Alert
+        </ons-list-item>
+        <ons-list-item ng-click="confirm()" modifier="tappable">
+            Confirm
+        </ons-list-item>
+        <ons-list-item ng-click="prompt()" modifier="tappable">
+            Prompt
+        </ons-list-item>
+    </ons-list>
+</ons-page>
